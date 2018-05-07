@@ -1,0 +1,64 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        app:layout_constraintBottom_toTopOf="@+id/tambahin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ListView>
+
+    <Button
+        android:id="@+id/tambahin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:onClick="pindahTambah"
+        android:text="Tambah Jadwal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/listView1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/rubah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:onClick="pindahRubah"
+        android:text="Ubah Jadwal"
+        app:layout_constraintStart_toStartOf="@+id/tambahin"
+        app:layout_constraintTop_toBottomOf="@+id/tambahin" />
+
+    <Button
+        android:id="@+id/apusin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pindahDelete"
+        android:text=" Delete Jadwal"
+        app:layout_constraintStart_toStartOf="@+id/kePeta"
+        app:layout_constraintTop_toBottomOf="@+id/listView1" />
+
+    <Button
+        android:id="@+id/kePeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:text="Lokasi Kampus"
+        android:onClick="MariLihatPeta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</android.support.constraint.ConstraintLayout>

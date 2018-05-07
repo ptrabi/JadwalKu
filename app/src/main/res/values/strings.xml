@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">JadwalKu</string>
+    <string name="title_activity_aku_peta">Map</string>
+    <string name="tinggi">50dp</string>
+    <string name="lebar">150dp</string>
+    <string-array name="hariii">
+        <item>Senin</item>
+        <item>Selasa</item>
+        <item>Rabu</item>
+        <item>Kamis</item>
+        <item>Jumat</item>
+        <item>Sabtu</item>
+    </string-array>
+</resources>
