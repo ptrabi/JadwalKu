@@ -5,12 +5,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.CoordinatorLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -19,37 +18,34 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    String[] daftar;
+
     ListView ListView01;
     protected Cursor cursor;
     DatabaseHelper dbhelpme;
-    private Button hapusin;
     boolean doubleTap = false;
-
     public static MainActivity ma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        logo();
         ma= this;
         dbhelpme = new DatabaseHelper(this);
-        hapusin = (Button)findViewById(R.id.apusin);
         ListView01 = (ListView)findViewById(R.id.listView1);
-
 
     RefreshList();
     }
 
-
+    public void logo(){
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.mipmap.ic_launcher);
+    }
    public void RefreshList() {
-       // final SQLiteDatabase db = dbhelpme.getReadableDatabase();
         cursor = dbhelpme.getAllData();
         ArrayList<String> listData = new ArrayList<>();
         while(cursor.moveToNext()){
-
-
-
            listData.add(cursor.getString(3));
         }
 
@@ -61,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listData);
-        ListView01.setAdapter(adapter);
-       ListView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            ListView01.setAdapter(adapter);
+            ListView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                String harinya = (ListView01.getItemAtPosition(position).toString());

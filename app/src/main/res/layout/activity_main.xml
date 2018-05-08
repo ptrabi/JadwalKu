@@ -10,55 +10,85 @@
 
     <ListView
         android:id="@+id/listView1"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        app:layout_constraintBottom_toTopOf="@+id/tambahin"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></ListView>
 
-    <Button
-        android:id="@+id/tambahin"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
-        android:onClick="pindahTambah"
-        android:text="Tambah Jadwal"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/listView1"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView1">
 
-    <Button
-        android:id="@+id/rubah"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:onClick="pindahRubah"
-        android:text="Ubah Jadwal"
-        app:layout_constraintStart_toStartOf="@+id/tambahin"
-        app:layout_constraintTop_toBottomOf="@+id/tambahin" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listView1">
 
-    <Button
-        android:id="@+id/apusin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="pindahDelete"
-        android:text=" Delete Jadwal"
-        app:layout_constraintStart_toStartOf="@+id/kePeta"
-        app:layout_constraintTop_toBottomOf="@+id/listView1" />
+            <Button
+                android:id="@+id/tambahin"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:onClick="pindahTambah"
+                android:text="Tambah Jadwal"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="222dp" />
 
-    <Button
-        android:id="@+id/kePeta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
-        android:text="Lokasi Kampus"
-        android:onClick="MariLihatPeta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <Button
+                android:id="@+id/rubah"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="pindahRubah"
+                android:text="Ubah Jadwal"
+                tools:layout_editor_absoluteX="36dp"
+                tools:layout_editor_absoluteY="321dp" />
+
+            <Button
+                android:id="@+id/apusin"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="pindahDelete"
+                android:text=" Delete Jadwal"
+                tools:layout_editor_absoluteX="218dp"
+                tools:layout_editor_absoluteY="254dp" />
+
+            <Button
+                android:id="@+id/kePeta"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="MariLihatPeta"
+                android:text="Lokasi Kampus"
+                tools:layout_editor_absoluteX="218dp"
+                tools:layout_editor_absoluteY="333dp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -27,10 +27,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".TambahJadwal"
-            android:noHistory="true"/>
+            android:noHistory="true"
+            android:label="Tambah Jadwal"
+            />
         <activity android:name=".EditJadwal"
+            android:label="Edit Jadwal"
             android:noHistory="true"/>
         <activity android:name=".DeleteJadwal"
+            android:label="Delete Jadwal"
             android:noHistory="true"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

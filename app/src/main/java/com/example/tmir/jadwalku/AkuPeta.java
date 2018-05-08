@@ -19,7 +19,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class AkuPeta extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap gMap;
-    float zoom = 18.0f;
+
     private static final int REQUEST_LOCATION_PERMISSION = 1;
 
     @Override

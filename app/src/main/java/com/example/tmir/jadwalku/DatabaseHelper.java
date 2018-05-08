@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by ProgrammingKnowledge on 4/3/2015.
  */
@@ -65,6 +68,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public Cursor getSatuMK(String mknya) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "Select * FROM "+TABLE_NAME+" WHERE kodemk = ('"+mknya+"')";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+    public List<String > getdata(){
+        List<String> projects = new ArrayList<String>();
+
+        String selectQuery = "SELECT KODEMK FROM jadwalku" ;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()) {
+            do {
+                projects.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+
+        // closing connection
+        cursor.close();
+        db.close();
+
+        // returning lables
+        return projects;
+        }
+
+
+
     public boolean updateData(String kodemk,String matkul,String ruangan,String hari,String jam, String dosen) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -82,6 +114,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Integer deleteData (String kodemk) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME, "KODEMK = ?",new String[] {kodemk});
+    }
+    public void deleteAllData () {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ TABLE_NAME);
+
     }
 
 
