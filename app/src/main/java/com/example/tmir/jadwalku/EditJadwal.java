@@ -97,7 +97,13 @@ public class EditJadwal extends AppCompatActivity {
 
     public boolean validasi(){
         konvert();
+
+
         boolean valid = true;
+        if(!(myDb.isMKada(kodemk))){
+            Toast.makeText(EditJadwal.this, "Data tidak ada",Toast.LENGTH_SHORT).show();
+            return false;
+        }
         if(kodemk.equals("")){
             editKodeMK.setError("Kode MK tidak boleh kosong");
             valid = false;
@@ -126,6 +132,8 @@ public class EditJadwal extends AppCompatActivity {
         dosen = editDosen.getText().toString().trim();
 
     }
+
+
 
     public void UpdateData() {
         spinnerHarii();

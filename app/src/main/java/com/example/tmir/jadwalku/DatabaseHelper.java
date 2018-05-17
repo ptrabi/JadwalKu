@@ -68,6 +68,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public  Boolean isMKada(String mknya) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "Select * FROM "+TABLE_NAME+" WHERE kodemk = ('"+mknya+"')";
+        Cursor data = db.rawQuery(query, null);
+        if(data.getCount()==1){
+            return true;
+        }
+        else {return false;}
+
+    }
+
     public Cursor getSatuMK(String mknya) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "Select * FROM "+TABLE_NAME+" WHERE kodemk = ('"+mknya+"')";
@@ -120,6 +131,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("delete from "+ TABLE_NAME);
 
     }
+
 
 
 }

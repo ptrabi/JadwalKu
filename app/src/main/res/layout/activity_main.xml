@@ -53,6 +53,8 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:onClick="pindahTambah"
+                android:background="#ff0000"
+                android:textColor="#00ffff"
                 android:text="Tambah Jadwal"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="81dp"
@@ -64,6 +66,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="pindahRubah"
+                android:shadowColor="#ff00"
                 android:text="Ubah Jadwal"
                 tools:layout_editor_absoluteX="36dp"
                 tools:layout_editor_absoluteY="321dp" />
